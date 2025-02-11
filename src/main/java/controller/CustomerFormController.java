@@ -1,6 +1,7 @@
 package controller;
 
 import dto.Customer;
+import jakarta.inject.Inject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -39,7 +40,8 @@ public class CustomerFormController {
     @FXML
     private TextField txtSalary;
 
-    CustomerService service = ServiceFactory.getInstance().getServiceType(ServiceType.CUSTOMER);
+    @Inject
+    CustomerService service;
 
     @FXML
     void btnAddCustomerAction(ActionEvent event) {
