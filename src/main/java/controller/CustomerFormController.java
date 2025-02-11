@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import service.ServiceFactory;
+import service.custom.CustomerService;
+import util.ServiceType;
 
 public class CustomerFormController {
 
@@ -36,6 +39,8 @@ public class CustomerFormController {
     @FXML
     private TextField txtSalary;
 
+    CustomerService service = ServiceFactory.getInstance().getServiceType(ServiceType.CUSTOMER);
+
     @FXML
     void btnAddCustomerAction(ActionEvent event) {
         String txtIDText = txtID.getText();
@@ -44,6 +49,8 @@ public class CustomerFormController {
         double txtSalaryText = Double.parseDouble(txtSalary.getText());
 
         Customer customer = new Customer(txtIDText, txtNameText, txtAddressText, txtSalaryText);
+
+        service.addCustomer(customer);
 
     }
 
