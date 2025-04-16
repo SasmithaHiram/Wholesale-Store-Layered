@@ -19,6 +19,5 @@ public class CustomerEntity {
     private String id;
     private String name;
     private String address;
-    private Double salary;
 
 }

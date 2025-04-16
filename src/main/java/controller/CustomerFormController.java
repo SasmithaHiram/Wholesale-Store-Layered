@@ -50,7 +50,7 @@ public class CustomerFormController {
         String txtAddressText = txtAddress.getText();
         double txtSalaryText = Double.parseDouble(txtSalary.getText());
 
-        Customer customer = new Customer(txtIDText, txtNameText, txtAddressText, txtSalaryText);
+        Customer customer = new Customer(txtIDText, txtNameText, txtAddressText);
 
         service.addCustomer(customer);
 
